@@ -1,24 +1,27 @@
 import React from 'react';
-import { View, StyleSheet} from 'react-native';
-import { Container, Button, Text } from 'native-base'; 
-import { useNavigation } from '@react-navigation/native'
-// mis importaciones
+import { View, StyleSheet } from 'react-native';
+import { Container, Button, Text } from 'native-base';
 import globalStyles from '../styles/global';
+import { useNavigation } from '@react-navigation/native';
 
 const NuevaOrden = () => {
-    
+
     const navigation = useNavigation();
-    
-    return ( <Container
-    style={globalStyles.contenedor}
-    ><View style={[globalStyles.contenido, styles.contenido]}>
-        <Button
-         style={globalStyles.boton}
-        rounded 
-        block
-        onPress={()=> navigation.navigate('Menu')}
-        ><Text  style={globalStyles.botonTexto}>Crear Nueva Orden</Text></Button>
-        </View></Container> );
+
+    return ( 
+        <Container style={globalStyles.contenedor}>
+            <View style={[globalStyles.contenido, styles.contenido]}>
+                <Button
+                    style={globalStyles.boton}
+                    rounded
+                    block
+                    onPress={ () => navigation.navigate('Menu')  }
+                >
+                    <Text style={globalStyles.botonTexto}>Crear Nueva Orden</Text>
+                </Button>
+            </View>
+        </Container>
+     );
 }
 
 const styles = StyleSheet.create({
@@ -27,5 +30,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     }
 })
-
+ 
 export default NuevaOrden;
