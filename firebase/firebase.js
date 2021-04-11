@@ -8,8 +8,9 @@ class Firebase {
         if(!app.apps.length) {
             app.initializeApp(firebaseConfig);
         }
-
+        
         this.db = app.firestore();
+        this.db.settings({ experimentalForceLongPolling: true });
         
     }
 }
